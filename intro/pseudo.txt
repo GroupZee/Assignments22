@@ -1,0 +1,8 @@
+step1.PseudocodeSTART
+step2.  Declare variables: e,f,g
+step3.Input e and f
+step4.Set g = num1
+step5.Set e = num2
+step6.Set f = temp
+step7.Output e and f
+step8.STOP

@@ -1,0 +1,9 @@
+Algorithm:
+1.Start
+2.Declare three variables: num1, num2, and temp.
+3.Input the values of num1 and num2.
+4.Store the value of num1 in the temporary variable.)
+5.Assign the value of num2 to num1.
+6.Assign the stored value in temp to num2.
+7.Output the values of num1 and num2.
+8.Stop
