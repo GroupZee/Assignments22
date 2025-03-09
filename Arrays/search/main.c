@@ -4,9 +4,9 @@
 int n, i, key, found = 0;
 int main() {
 
-    printf("Enter the number of elements in the array: ");
+    printf("Enter the number of elements you want in the array: ");
     scanf("%d", &n);
-// Declare the array of size 'n'
+// Declaring the array of size 'n'
     int arr[n];
 
     printf("Enter %d elements:\n", n);
@@ -14,7 +14,7 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
-    printf("Enter the element to search: ");
+    printf("Enter the element you want to search: ");
     scanf("%d", &key);
 
     //search
