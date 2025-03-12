@@ -43,6 +43,7 @@ int main() {
         strcpy(all[n + i], wildAnimals[i]);
     }
 
+    //Output
  for(int y=0;y<n+x;y++)
 printf("%s ",all[y]);
 

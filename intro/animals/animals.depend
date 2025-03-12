@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1741785777 source:c:\users\ugpan\desktop\asignmentssss\assignments22\intro\animals\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
