@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main() {
     int n, x;
 
-    // Input the number of domestic animals
+
     printf("Enter the number of domestic animals: ");
     scanf("%d", &n);
 
-    // Allocate memory for the domestic animals array
-    char domesticAnimals[n][50];
+    //domestic animals array
+    char domesticAnimals[n][100];
 
     printf("Enter the names of %d domestic animals:\n", n);
     for (int i = 0; i < n; i++) {
@@ -17,12 +18,12 @@ int main() {
         scanf("%s", domesticAnimals[i]);
     }
 
-    // Input the number of wild animals
+    // wild animals
     printf("\nEnter the number of wild animals: ");
     scanf("%d", &x);
 
-    // Allocate memory for the wild animals array
-    char wildAnimals[x][50];
+    // wild animals array
+    char wildAnimals[x][100];
 
     printf("Enter the names of %d wild animals:\n", x);
     for (int i = 0; i < x; i++) {
@@ -30,20 +31,21 @@ int main() {
         scanf("%s", wildAnimals[i]);
     }
 
-    // Print all animals
-    printf("\nThe complete list of animals (Domestic and Wild):\n");
+    char all[n + x][200];
 
-    // Print domestic animals
-    printf("Domestic Animals:\n");
+    //domestic animals to All array
     for (int i = 0; i < n; i++) {
-        printf("%s\n", domesticAnimals[i]);
+        strcpy(all[i], domesticAnimals[i]);
     }
 
-    // Print wild animals
-    printf("Wild Animals:\n");
+    // wild animals to all array
     for (int i = 0; i < x; i++) {
-        printf("%s\n", wildAnimals[i]);
+        strcpy(all[n + i], wildAnimals[i]);
     }
+
+ for(int y=0;y<n+x;y++)
+printf("%s ",all[y]);
+
 
     return 0;
 }
