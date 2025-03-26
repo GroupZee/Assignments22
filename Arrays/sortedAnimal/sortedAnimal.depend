@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1742975492 source:c:\users\administrator\desktop\ner\assignments22\arrays\sortedanimal\main.c
+	<stdio.h>
+	<string.h>
+

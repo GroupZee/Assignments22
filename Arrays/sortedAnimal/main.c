@@ -1,23 +1,30 @@
+
 #include <stdio.h>
 #include <string.h>
+#define nn 7
+int n, x, i;
+char domesticAnimals[nn][50];
+char wildAnimals[nn][50];
+char all[nn*2][200];
+void sort(char arr[][150],int size);
 
 int main() {
-    int n, x, i;
+
     int valid = 1; // Flag to check if input is valid
 
     // Input the number of domestic animals
     printf("Enter the number of domestic animals: ");
     scanf("%d", &n);
-    if (n <= 0) {
+    if (n <= 0 || n>=nn) {
         printf("Invalid number of domestic animals.\n");
         return 1;
     }
 
-    char domesticAnimals[n][50];
 
-    printf("Enter the names of %d domestic animals (e.g., 'cow', 'goat'):\n", n);
+
+    printf("Enter the names of %d domestic animals:\n", n);
     for (i = 0; i < n; i++) {
-        printf("Domestic animal %d: ", i + 1);
+        printf("%d. ", i + 1);
         scanf("%s", domesticAnimals[i]);
 
         // Validate if entered name is a known domestic animal
@@ -37,16 +44,16 @@ int main() {
     // Input the number of wild animals
     printf("\nEnter the number of wild animals: ");
     scanf("%d", &x);
-    if (x <= 0) {
+    if (x <= 0 ||x>=nn) {
         printf("Invalid number of wild animals.\n");
         return 1;
     }
 
-    char wildAnimals[x][50];
 
-    printf("Enter the names of %d wild animals (e.g., 'lion', 'tiger'):\n", x);
+
+    printf("Enter the names of %d wild animals:\n", x);
     for (i = 0; i < x; i++) {
-        printf("Wild animal %d: ", i + 1);
+        printf("%d. ", i + 1);
         scanf("%s", wildAnimals[i]);
 
         // Validate if entered name is a known wild animal
@@ -63,8 +70,7 @@ int main() {
         return 1;
     }
 
-    // Print all valid animals
-    char all[n + x][200];
+
 
     //domestic animals to All array
     for (int i = 0; i < n; i++) {
@@ -75,12 +81,28 @@ int main() {
     for (int i = 0; i < x; i++) {
         strcpy(all[n + i], wildAnimals[i]);
     }
-
+printf("\n\n");
     //Output
-    printf("\n\n\nThe list of merged animals:");
- for(int y=0;y<n+x;y++)
-
-    printf("%s ",all[y]);
-
+ for(int y=0;y<n+x;y++){
+printf("%s ",all[y]);
+ }
+ printf("\n");
+sort(all,n+x);
+for(i=0;i<n+x;i++){
+printf("%s ",all[i]);
+}
     return 0;
+}
+void sort(char arr[][150], int size) {
+    // Simple bubble sort for demonstration purposes
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (strcmp(arr[j], arr[j + 1]) > 0) {
+                char temp[150];
+                strcpy(temp, arr[j]);
+                strcpy(arr[j], arr[j + 1]);
+                strcpy(arr[j + 1], temp);
+            }
+        }
+    }
 }
