@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1743595136 source:c:\users\ugpan\desktop\andy\push element in stack\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
