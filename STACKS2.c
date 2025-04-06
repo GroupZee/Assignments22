@@ -126,12 +126,7 @@ switch(choice){
 
 }
 
-    //display(&stack); // Display the stack
-
-
-    //display(&l);
-    //printf("The top name on the list is \"%s\"",peek(&l));
-
 
     return 0;
 }
+
