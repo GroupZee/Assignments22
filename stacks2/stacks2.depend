@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1744102941 source:c:\users\ugpan\desktop\andy\stacks2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
