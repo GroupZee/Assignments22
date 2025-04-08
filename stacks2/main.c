@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 
 typedef struct {
@@ -38,8 +39,19 @@ void push(Friendlist *l, int y) {
     printf("%d.",r+1);
     fgets(item, sizeof(item), stdin);
     item[strcspn(item, "\n")] = 0; // Remove newline character
-
-    l->data[++l->top] = strdup(item); // Duplicate and store the string
+    int v=1;
+        for(int q=0;item[q]!='\0';q++){
+            if(!isalpha(item[q])&& item[q]!=' '){
+                v=0;
+                break;
+            }
+        }
+        if(v){
+          l->data[++l->top] = strdup(item); // Duplicate and store the string
+        }
+        else{
+            printf("Not Today");
+        }
 
 }
 printf("\n");
@@ -48,7 +60,7 @@ printf("\n");
 void pop(Friendlist *l) {
     if (Empty(l)) {
         printf("Friendlist is empty! Cannot pop.\n");
-        return 0;
+        return;
     }
 else{
     printf("\"%s\" popped from the Friend_list.\n",l->data[l->top]);
@@ -72,7 +84,7 @@ void display(Friendlist *l) {
     }
     printf("Current list: ");
     for (int i = 0; i <=l->top; i++) {
-        printf("-%s\n",l->data[i]);
+        printf("\n-%s",l->data[i]);
     }
     printf("\n");
 }
